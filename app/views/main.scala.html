@@ -1,0 +1,35 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
+        <!--Third parties StyleSheets-->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+        <!--Own Style Sheets-->
+        <link rel="stylesheet" href="@routes.Assets.at("stylesheets/main.css")">
+
+        <!--Third parties JavaScripts-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+        <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <!--Own JavaScripts-->
+        <script src="@routes.Assets.at("javascripts/main.js")"></script>
+    </head>
+    <body>
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom affix">
+            <div class="container">
+                <!-- Nav bar with shortcuts -->
+                <div class="navbar-header page-scroll">
+                    <a class="navbar-brand" href="@routes.AuthController.signUp()">Cadastrar</a>
+                    <a class="navbar-brand" href="@routes.AuthController.login()">Login</a>
+                    <a class="navbar-brand" href="@routes.Application.index()">Home</a>
+                </div>
+            </div>
+        </nav>
+        @content
+    </body>
+</html>

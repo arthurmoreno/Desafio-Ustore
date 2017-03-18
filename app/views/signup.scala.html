@@ -1,0 +1,21 @@
+@(form: Form[SignUpForm])
+@main("Cadastro") {
+    @helper.form(routes.AuthController.newUser(), 'id -> "signupForm") {
+    <script src="@routes.Assets.at("javascripts/signup.js")"></script>
+        <div class="form-group div-form">
+            <h1>Cadastro</h1>
+            <input class="form-control field-form" type="text" name="name" placeholder="Nome">
+            <input class="form-control field-form" type="text" name="email" placeholder="E-mail">
+            <input class="form-control field-form" type="text" name="phone" placeholder="Telefone">
+            <input class="form-control field-form" type="password" name="password" placeholder="Password">
+            <input class="form-control field-form" type="password" name="passwordConfirmation" placeholder="Confirm Password">
+
+            <p>
+                 <button class="btn btn-success" type="submit">Cadastrar</button>
+            </p>
+            <p>
+                Já possui um usuário? <a href="@routes.AuthController.login()">Entre agora!</a>
+            </p>
+        </div>
+    }
+}

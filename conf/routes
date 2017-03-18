@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Application
+GET     /                           controllers.Application.index()
+
+# Crawler
+GET     /startCrawler               controllers.CrawlerController.startCrawler4j()
+
+# Authentication
+GET     /signUp                     controllers.AuthController.signUp()
+POST    /signUp                     controllers.AuthController.newUser()
+GET     /login                      controllers.AuthController.login()
+POST    /login                      controllers.AuthController.authenticate()
+GET     /logout                     controllers.AuthController.logout()
+GET     /delete                     controllers.AuthController.deleteUser()
+GET     /alter                      controllers.AuthController.alter()
+POST    /alter                      controllers.AuthController.alterUser()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

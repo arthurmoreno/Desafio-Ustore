@@ -1,0 +1,23 @@
+@(user: String)
+
+@main(s"$user") {
+    <script src="@routes.Assets.at("javascripts/home.js")"></script>
+
+    <div class="div-form center-text">
+        <h1>Bem vindo, @user</h1>
+        <br>
+        <h4>Aqui você poderá alterar seu usuário, deletá-lo ou ainda sair do sistema.</h4>
+        <h4>Além disso você pode iniciar os Crawlers para realizar a busca de páginas na wikipédia.</h4>
+
+        <br>
+        <p><a href="@routes.CrawlerController.startCrawler4j()" class="btn btn-info">Iniciar Crawler</a></p>
+        <br>
+        <br>
+
+        <div>
+            <a class="col-md-4" href="@routes.AuthController.logout()">Log out!</a>
+            <a class="col-md-4" id="deleteUser" href="@routes.AuthController.deleteUser()">Deletar usuário</a>
+            <a class="col-md-4" href="@routes.AuthController.alterUser()">Modificar usuário</a>
+        </div>
+    </div>
+}
