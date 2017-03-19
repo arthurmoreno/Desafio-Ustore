@@ -2,6 +2,9 @@ package models;
 
 import java.util.Date;
 
+/**
+ * Class of a single session.
+ */
 public class Session {
 
     private final User user;

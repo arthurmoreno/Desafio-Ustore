@@ -13,13 +13,15 @@ import play.mvc.Security;
 import views.html.index;
 
 /**
- * Created by arthur on 18/03/17.
+ * Controller of the Crawlers. Here the parameters are set,
+ * and the Crawlers started.
+ *
+ * @author Yasser Ganjisaffar
  */
 public class CrawlerController extends Controller {
-    private Crawler4j crawler4j;
 
     @Security.Authenticated(Secured.class)
-    public Result startCrawler4j()throws Exception {
+    public Result startCrawler4j() throws Exception {
         String crawlStorageFolder = "public/data/crawler";
         int numberOfCrawlers = 3;
         int maxPagesToFetch = 75;

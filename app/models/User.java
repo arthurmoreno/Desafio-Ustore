@@ -1,12 +1,16 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import play.data.format.Formats;
-import sun.util.calendar.LocalGregorianCalendar;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
+/**
+ * User Class to be persisted on the database.
+ */
 @Entity
 public class User {
 

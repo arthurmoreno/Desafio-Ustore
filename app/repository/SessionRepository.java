@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Class that controls the User session.
+ */
 public class SessionRepository {
 
     private final Map<String, Session> repo;
@@ -17,24 +20,34 @@ public class SessionRepository {
     public static final SessionRepository instance = new SessionRepository();
 
     private SessionRepository() {
-        this.repo = new HashMap<>();
+        // TODO: i think that is not working properly (need more time to test and deploy)
+        // Time the user can stay logged on the system
         this.ttl = 7200000;
+        this.repo = new HashMap<>();
     }
 
-    public boolean isLoggedIn(String name) {
-        final Session session = repo.get(name);
+    /**
+     * Verifies if a specific user is logged on the system.
+     * @param email User email that will be verified.
+     */
+    public boolean isLoggedIn(String email) {
+        final Session session = repo.get(email);
         final boolean loggedIn = Optional.ofNullable(session).map(s -> {
             Date now = new Date();
             final long inactivityPeriod = now.getTime() - s.getLastSeen().getTime();
             return inactivityPeriod < ttl;
         }).orElse(false);
 
-        if (!loggedIn) repo.remove(name);
-        else repo.put(name, new Session(session.getUser(), session.getLoggedIn(), new Date()));
+        if (!loggedIn) repo.remove(email);
+        else repo.put(email, new Session(session.getUser(), session.getLoggedIn(), new Date()));
 
         return loggedIn;
     }
 
+    /**
+     * Login user on session.
+     * @param user User that will be logged in.
+     */
     public void login(User user) {
         // TODO: treat errors better.
         Preconditions.checkArgument(!isLoggedIn(user.getEmail()), "Usuário já logado no sistema");
@@ -42,8 +55,12 @@ public class SessionRepository {
         repo.put(user.getEmail(), new Session(user, now, now));
     }
 
-    public void logout(String name) {
-        repo.remove(name);
+    /**
+     * Logout user on session.
+     * @param email User's email that will be disconnected from the system.
+     */
+    public void logout(String email) {
+        repo.remove(email);
     }
 
 }

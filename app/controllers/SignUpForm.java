@@ -1,5 +1,8 @@
 package controllers;
 
+/**
+ * Form used for the user to signUp.
+ */
 public class SignUpForm {
     public String name;
     public String email;
