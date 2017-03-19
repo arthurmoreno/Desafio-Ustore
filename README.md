@@ -4,15 +4,14 @@
 
 ## Introdução
 
-    Ustore é uma empresa brasileira de infraestrutura tecnológica que viabiliza soluções em
+Ustore é uma empresa brasileira de infraestrutura tecnológica que viabiliza soluções em
 nuvem de maneira escalável, sólida e confiável com o objetivo de melhorar de forma
 significativa a vida das pessoas e a competitividade das organizações.
 
-    Este desafio está divido em duas partes. A primeira parte consiste no desenvolvimento de
+Este desafio está divido em duas partes. A primeira parte consiste no desenvolvimento de
 um CRUD através de uma API REST. A segunda é um incremento da primeira e consiste na
 implementação de um web Crawler e a inserção de restrições de acesso para os usuários
 cadastrados.
-
 
 ## Trabalhos Futuros
 
