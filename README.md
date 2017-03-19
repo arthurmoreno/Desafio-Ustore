@@ -15,9 +15,9 @@ cadastrados.
 
 ## Trabalhos Futuros
 
-* Utilizar AngularJS para simular uma SPA;
+* Utilizar AngularJS para simular uma SPA (Apenas tomei conhecimento dessa ferramenta no final);
 * Melhorar o tratamento dos erros em todos os sentidos. Exibindo menssagens mais agradáveis ao
-usuário, além de permitir uma maior transparência do que está acontecendo no sistema.
+usuário, além de permitir uma maior transparência do que está acontecendo no sistema;
 * Concluir o sistema do crawler e assim exibir as páginas recuperadas por ele, além de criar
-sistema de restrição dos usuários.
-* Desenvolver telas mais agradáveis ao usuários.
+sistema de restrição dos usuários (usar a JPAApi dentro de um Runnable);
+* Desenvolver telas mais agradáveis ao usuários;
